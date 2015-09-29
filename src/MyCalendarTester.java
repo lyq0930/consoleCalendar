@@ -18,6 +18,25 @@ public class MyCalendarTester
     {
         GregorianCalendar cal = new GregorianCalendar(); // capture today
         printMonthView(cal);
+
+        System.out.println("[P]revious or [N]ext");
+        Scanner scan = new Scanner(System.in);
+        while(scan.hasNext()){
+            String input = scan.nextLine();
+            switch(input){
+                case "n":case "N":
+                    cal.add(Calendar.MONTH, +1);
+                    printMonthView(cal);
+                    System.out.println("[P]revious or [N]ext");
+                    break;
+                case "p":case "P":
+                    cal.add(Calendar.MONTH, -1);
+                    printMonthView(cal);
+                    System.out.println("[P]revious or [N]ext");
+                    break;
+                default:break;
+            }
+        }
     }
 
     public static void printMonthView(GregorianCalendar c) {
@@ -45,5 +64,6 @@ public class MyCalendarTester
                 count = 0;
             }
         }
+        System.out.println();
     }
 }

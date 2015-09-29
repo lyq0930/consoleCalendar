@@ -17,42 +17,33 @@ public class MyCalendarTester
     public static void main(String [] args)
     {
         GregorianCalendar cal = new GregorianCalendar(); // capture today
-
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Today: ");
-
-        printCalendar(cal);
-
-        while (sc.hasNextLine())
-        {
-            String input = sc.nextLine();
-            if (input.equals("p"))
-            {
-                cal.add(Calendar.MONTH,-1);
-                printCalendar(cal);
-            }
-            else if (input.equals("n"))
-            {
-                cal.add(Calendar.MONTH,1);
-                printCalendar(cal);
-            }
-        }
-        System.out.println("Bye!");
+        printMonthView(cal);
     }
 
-    public static void printCalendar(Calendar c)
-    {   MONTHS[] arrayOfMonths = MONTHS.values();
-        DAYS[] arrayOfDays = DAYS.values();
+    public static void printMonthView(GregorianCalendar c) {
+        MONTHS[] arrayOfMonths = MONTHS.values();
+        System.out.println("     " + arrayOfMonths[c.get(Calendar.MONTH)] + " " + c.get(Calendar.YEAR));
+        System.out.println("Su Mo Tu We Th Fr Sa");
 
-        System.out.print(arrayOfDays[c.get(Calendar.DAY_OF_WEEK)-1]);
-        System.out.print(" ");
-        System.out.print(arrayOfMonths[c.get(Calendar.MONTH)]);
-        System.out.print(" ");
-        System.out.print(c.get(Calendar.DAY_OF_MONTH));
-        System.out.print(" ");
-
+        //create an temperate object for the current month to get the first day_of_week
         GregorianCalendar temp = new GregorianCalendar(c.get(Calendar.YEAR), c.get(Calendar.MONTH), 1);
-        System.out.println("The first day of this month is " + arrayOfDays[temp.get(Calendar.DAY_OF_WEEK)-1]);
+        int firstDay_of_week = temp.get(Calendar.DAY_OF_WEEK);
 
+        int count = 0;
+        for (int blank = 1; blank < firstDay_of_week; blank++){
+            System.out.print("   ");
+            count ++;
+        }
+        for(int day = 1; day <= c.getActualMaximum(Calendar.DAY_OF_MONTH); day++){
+            if(day == c.get(Calendar.DAY_OF_MONTH))
+                System.out.printf("[%d] ", day);
+            else
+                System.out.printf("%2d ", day);
+            count++;
+            if(count == 7) {
+                System.out.println();
+                count = 0;
+            }
+        }
     }
 }

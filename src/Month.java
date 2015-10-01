@@ -4,7 +4,7 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class Month extends MyCalendar{
+public class Month{
     int year;
     int month;
     int daysOfMonth;

@@ -3,7 +3,7 @@
  */
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-public class Day extends MyCalendar{
+public class Day{
     private int year;
     private int month;
     private int date;

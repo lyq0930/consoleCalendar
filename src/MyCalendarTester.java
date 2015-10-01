@@ -2,7 +2,7 @@
  * Created by Louis on 9/28/15.
  */
 import java.util.Scanner;
-//test this
+
 public class MyCalendarTester {
     public static void main(String[] args) {
         MyCalendar cal = new MyCalendar();

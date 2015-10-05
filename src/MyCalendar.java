@@ -16,35 +16,35 @@ enum DAYS
 public class MyCalendar {
     GregorianCalendar cal = new GregorianCalendar();
     EventSystem eventSystem = new EventSystem();
-    Month month = new Month();
-    Day day = new Day();
+    MonthVIEW monthVIEW = new MonthVIEW();
+    DayVIEW dayVIEW = new DayVIEW();
 
     public void printCurrentMonthView(){
-        printCurrentMonthView(cal);
+        printCurrentMonthView(new GregorianCalendar());
     }
 
     private void printCurrentMonthView(GregorianCalendar c) {
         MONTHS[] arrayOfMonths = MONTHS.values();
 
-        //Print the month, year, and week of the current view
+        //Print the monthVIEW, year, and week of the current view
         System.out.println("********************************************************");
         System.out.println("Welcome to the console Calendar, written by YanQiang Lu");
         System.out.println("********************************************************");
         System.out.println("     " + arrayOfMonths[c.get(Calendar.MONTH)] + " " + c.get(Calendar.YEAR));
         System.out.println("Su Mo Tu We Th Fr Sa");
 
-        //create an temperate object for the current month to get the first_day_of_week
+        //create an temperate object for the current monthVIEW to get the first_day_of_week
         GregorianCalendar temp = new GregorianCalendar(c.get(Calendar.YEAR), c.get(Calendar.MONTH), 1);
         int firstDay_of_week = temp.get(Calendar.DAY_OF_WEEK);
         int count = 0;  //a counter for new line
 
-        //print blank at the beginning of the month view until the first_day_of_week
+        //print blank at the beginning of the monthVIEW view until the first_day_of_week
         for (int blank = 1; blank < firstDay_of_week; blank++){
             System.out.print("   ");
             count ++;
         }
 
-        //print days from 1 to the_actual_last_day of the month.
+        //print days from 1 to the_actual_last_day of the monthVIEW.
         for(int day = 1; day <= c.getActualMaximum(Calendar.DAY_OF_MONTH); day++){
             if(day == c.get(Calendar.DAY_OF_MONTH)) //Mark today
                 System.out.printf("[%d] ", day);
@@ -73,7 +73,7 @@ public class MyCalendar {
                     System.out.println("[D]ay view or [M]view ?");
                     while(scan.hasNext()){
                         in = scan.nextLine();
-                        //enter month view or day view
+                        //enter monthVIEW view or dayVIEW view
                         if(in.compareToIgnoreCase("m") == 0) {
                             enterMonthView(scan);
                             break;
@@ -101,33 +101,70 @@ public class MyCalendar {
     }
 
     private void enterMonthView(Scanner scan){
-        month.printMonthView();
+        monthVIEW.printMonthView(cal);
         System.out.println("[P]revious or [N]ext or [M]ain menu ?");
         while(scan.hasNext()){
             String in = scan.nextLine();
             if(in.compareToIgnoreCase("p") == 0){
-                month.preMonth();
-                month.printMonthView();
+                monthVIEW.preMonth(cal);
+                monthVIEW.printMonthView(cal);
             } else if(in.compareToIgnoreCase("n") == 0){
-                month.nextMonth();
-                month.printMonthView();
+                monthVIEW.nextMonth(cal);
+                monthVIEW.printMonthView(cal);
             } else if(in.compareToIgnoreCase("m") == 0)
                 break;
             System.out.println("[P]revious or [N]ext or [M]ain menu ?");
         }
     }
+    private void printMonthView(GregorianCalendar c){
+        MONTHS[] arrayOfMonths = MONTHS.values();
+
+        //Print the monthVIEW, year, and week of the current view
+        System.out.println("     " + arrayOfMonths[c.get(Calendar.MONTH)] + " " + c.get(Calendar.YEAR));
+        System.out.println("Su Mo Tu We Th Fr Sa");
+
+        //create an temperate object for the current monthVIEW to get the first_day_of_week
+        GregorianCalendar temp = new GregorianCalendar(c.get(Calendar.YEAR), c.get(Calendar.MONTH), 1);
+        int firstDay_of_week = temp.get(Calendar.DAY_OF_WEEK);
+        int count = 0;  //a counter for new line
+
+        //print blank at the beginning of the monthVIEW view until the first_day_of_week
+        for (int blank = 1; blank < firstDay_of_week; blank++){
+            System.out.print("   ");
+            count ++;
+        }
+
+        //print days from 1 to the_actual_last_day of the monthVIEW.
+        for(int day = 1; day <= c.getActualMaximum(Calendar.DAY_OF_MONTH); day++){
+            if(isTheDayHasEvent(day))
+                System.out.printf("[%d] ", day);
+            else
+                System.out.printf("%2d ", day);
+            count++;
+            if(count == 7) {
+                System.out.println();
+                count = 0;
+            }
+        }
+        System.out.println();
+    }
+
+    public boolean isTheDayHasEvent(int aday){
+        return false;
+    }
+
 
     private void enterDayView(Scanner scan){
-        day.printDayView();
+        dayVIEW.printDayView();
         System.out.println("[P]revious or [N]ext or [M]ain menu ?");
         while(scan.hasNext()){
             String in = scan.nextLine();
             if(in.compareToIgnoreCase("p") == 0){
-                day.preDay();
-                day.printDayView();
+                dayVIEW.preDay();
+                dayVIEW.printDayView();
             } else if(in.compareToIgnoreCase("n") == 0){
-                day.nextDay();
-                day.printDayView();
+                dayVIEW.nextDay();
+                dayVIEW.printDayView();
             } else if(in.compareToIgnoreCase("m") == 0)
                 break;
             System.out.println("[P]revious or [N]ext or [M]ain menu ?");
@@ -145,9 +182,10 @@ public class MyCalendar {
         int year = Integer.parseInt(dateInput.substring(7, 10));
         System.out.print("Start Time: ");
         String startTime = scan.nextLine();
-        Day aDay = new Day(year,month,date);
+        DayVIEW aDay = new DayVIEW(year,month,date);
         Event event = new Event(title, aDay, startTime);
-        eventSystem.addEvent(aDay, event);
-        eventSystem.getAll();
+        //eventSystem.addEvent(aDay, event);
+        eventSystem.addEvent(new GregorianCalendar(year, month-1, date), event);
+        eventSystem.getAll2();
     }
 }

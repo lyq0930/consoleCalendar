@@ -9,7 +9,7 @@ public class Event {
     String startTime;
     String endTime;
 
-    public Event(String aTitle, Day aDay, String aStartTime){
+    public Event(String aTitle, DayVIEW aDay, String aStartTime){
         this.title = aTitle;
         this.year = aDay.getYear();
         this.month = aDay.getMonth();

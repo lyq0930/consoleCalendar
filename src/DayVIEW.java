@@ -3,16 +3,16 @@
  */
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-public class Day{
+public class DayVIEW {
     private int year;
     private int month;
     private int date;
     private int dayOfWeek;
     GregorianCalendar cal = new GregorianCalendar();
 
-    public Day(){}
+    public DayVIEW(){}
 
-    public Day(int aYear, int aMonth, int aDate){
+    public DayVIEW(int aYear, int aMonth, int aDate){
         this.year = aYear;
         this.month = aMonth;
         this.date = aDate;

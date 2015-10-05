@@ -86,7 +86,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Month",
+											"text": "MonthVIEW",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -370,7 +370,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Month",
+											"text": "MonthVIEW",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -679,7 +679,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+preMonth(): Month",
+											"text": "+preMonth(): MonthVIEW",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -707,7 +707,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+nextMonth(): Month",
+											"text": "+nextMonth(): MonthVIEW",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -882,7 +882,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Day",
+											"text": "DayVIEW",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -1191,7 +1191,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+preDay(): Day",
+											"text": "+preDay(): DayVIEW",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -1219,7 +1219,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+nextDay(): Day",
+											"text": "+nextDay(): DayVIEW",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -2277,7 +2277,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Month",
+					"name": "MonthVIEW",
 					"visibility": "public",
 					"isAbstract": false,
 					"isFinalSpecialization": false,
@@ -2290,7 +2290,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Month",
+					"name": "MonthVIEW",
 					"visibility": "public",
 					"attributes": [
 						{
@@ -2507,7 +2507,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Day",
+					"name": "DayVIEW",
 					"visibility": "public",
 					"attributes": [
 						{

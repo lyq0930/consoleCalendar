@@ -3,66 +3,65 @@ import java.util.*;
 /**
  * Created by Louis on 9/29/15.
  */
-public class EventSystem {
-    HashMap<DayVIEW, Event> eventMap = new HashMap<>();
-    HashMap<GregorianCalendar, Event> eventMap2 = new HashMap<>();
+public class EventSystem{
+    Map<GregorianCalendar, ArrayList<Event>> eventMap = new HashMap<>();
+    private ArrayList<Event> allEvents;
     Event aEvent;
 
+    public EventSystem(){}
+
+    public EventSystem(ArrayList<Event> allEvents){
+        this.allEvents = allEvents;
+    }
+
+    public ArrayList<Event> getSortedAllEvents(){
+        sortEvent(this.allEvents);
+        return this.allEvents;
+    }
+
     public void addEvent(GregorianCalendar c, Event aEvent){
-        eventMap2.put(c, aEvent);
-    }
-
-    public void addEvent(DayVIEW dayVIEW, Event aEvent){
-        eventMap.put(dayVIEW, aEvent);
-    }
-
-    public Event getEvent(DayVIEW dayVIEW){
-        return eventMap.get(dayVIEW);
-    }
-
-    public void getAll(){
-        Set set1 = eventMap.entrySet();
-        Iterator iter = set1.iterator();
-        while(iter.hasNext()){
-            Map.Entry entry = (Map.Entry) iter.next();
-            DayVIEW aDay = (DayVIEW) entry.getKey();
-            Event aEvent = (Event) entry.getValue();
-            aDay.printFullDate();
-            System.out.println(aEvent.getTitle());
+        if(eventMap.containsKey(c)){
+            ArrayList<Event> eventList = eventMap.get(c);
+            eventList.add(aEvent);
+        } else {
+            ArrayList<Event> newEventList = new ArrayList<>();
+            newEventList.add(aEvent);
+            eventMap.put(c, newEventList);
         }
-
+        allEvents.add(aEvent);
     }
 
-    public void getAll2(){
-        Set set1 = eventMap2.entrySet();
-        Iterator iter = set1.iterator();
-        while(iter.hasNext()){
-            Map.Entry entry = (Map.Entry) iter.next();
-            GregorianCalendar c = (GregorianCalendar) entry.getKey();
-            Event aEvent = (Event) entry.getValue();
+    public void sortEvent(ArrayList<Event> eventList){
+        Comparator<Event> comp = new
+                Comparator<Event>(){
+                public int compare(Event e1, Event e2){
+                    //if the two events are different day
+                    if(e1.getDateStamp().compareTo(e2.getDateStamp()) != 0){
+                        return e1.getDateStamp().compareTo(e2.getDateStamp());
+                    } else{
+                        return e1.getStartTime().compareTo(e2.getStartTime());
+                    }
+                }
+        };
+        Collections.sort(eventList, comp);
+    }
 
-            MONTHS[] arrayOfMonths = MONTHS.values();
-            DAYS[] arrayOfDays = DAYS.values();
-            System.out.println(arrayOfDays[c.get(Calendar.DAY_OF_WEEK) - 1] + " " + arrayOfMonths[c.get(Calendar.MONTH)]
-                    + " " + c.get(Calendar.DAY_OF_MONTH) + " " + c.get(Calendar.YEAR));
-            System.out.println(aEvent.getTitle());
+//    public ArrayList<Event> getAll(){
+//        ArrayList<Event> allEvent = new ArrayList<>();
+//        for(Map.Entry<GregorianCalendar, ArrayList<Event>> entry : eventMap.entrySet()) {
+//            ArrayList<Event> eventList = entry.getValue();
+//            for(Event event : eventList) {
+//                allEvent.add(event);
+//            }
+//        }
+//        return allEvent;
+//    }
+
+    public boolean isADayHasEvent(GregorianCalendar dateStamp){
+        if(eventMap.containsKey(dateStamp)){
+            return true;
+        } else{
+            return false;
         }
-
     }
-
-    public boolean isADayHasEvent(DayVIEW dayVIEW){
-        Set set1 = eventMap.entrySet();
-        Iterator iter = set1.iterator();
-        while(iter.hasNext()){
-            Map.Entry entry = (Map.Entry) iter.next();
-            if(entry.getKey() == dayVIEW)
-                return true;
-        }
-        return false;
-    }
-
-    public boolean belongsOneDay(Calendar c){
-        return false;
-    }
-
 }

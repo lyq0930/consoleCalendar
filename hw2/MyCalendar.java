@@ -132,11 +132,11 @@ public class MyCalendar {
 
     /**
      * Print date in certain format.
-     * @param format The format for printing
-     * @param day The digit of the date
+     * @param message The format for printing
+     * @param day the date digit
      */
-    protected void printDateDigit(String format, int day) {
-        System.out.printf(format, day);
+    protected void printDateDigit(String message, int day) {
+        System.out.printf(message, day);
     }
 
     /**
@@ -199,7 +199,7 @@ public class MyCalendar {
      * Enter month view or day view
      */
     private void enterView(){
-        printMessage("[D]ay view or [M]onth view ?\n");
+        printMessage("[D]ay view or [M]view ?\n");
         while(scan.hasNext()){
             String in = userInput();
             //enter monthVIEW view or dayVIEW view
@@ -358,7 +358,7 @@ public class MyCalendar {
         if(eventSystem.isADayHasEvent(dateStamp)){
             int count = 1;
             for(Event event: eventSystem.getEventsInThisDay(dateStamp)){
-                printMessage("\n" + count++ + ": " + event.getInfo());
+                printMessage("\n" + count++ + ": " + event.getInfo() + "\n");
             }
         } else{
             printMessage("No event in this day.\n");

@@ -1,20 +1,20 @@
-Event title: hello5
-In Date: Wed, September, 30, 2015
-Start at: 11:11
+Event title: hello2
+Start at: 10:00
+End at: No end time
 -----------------
 Event title: hello4
-In Date: Fri, October, 2, 2015
-Start at: 10:11
------------------
-Event title: hello2
-In Date: Sun, October, 4, 2015
-Start at: 08:30
+Start at: 10:10
+End at: 11:00
 -----------------
 Event title: hello1
-In Date: Thur, October, 1, 2015
-Start at: 11:12
+Start at: 11:20
+End at: 12:00
+-----------------
+Event title: This is a test at October 7
+Start at: 08:30
+End at: 09:30
 -----------------
 Event title: hello3
-In Date: Thur, October, 1, 2015
-Start at: 10:08
+Start at: 01:20
+End at: 10:20
 -----------------

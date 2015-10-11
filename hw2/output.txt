@@ -1,0 +1,256 @@
+
+********************************************************
+Welcome to the console Calendar, written by YanQiang Lu
+********************************************************
+     October 2015
+Su Mo Tu We Th Fr Sa
+             1  2  3 
+ 4  5  6  7  8  9 [10] 
+11 12 13 14 15 16 17 
+18 19 20 21 22 23 24 
+25 26 27 28 29 30 31 
+
+Note: The marked date is today.
+********************************************************
+Select one of the following options: 
+[L]oad   [V]iew by  [C]reate, [G]o to [E]vent list [D]elete  [Q]uit
+c
+
+To create an event, please enter the following information:
+Title: hello1
+Date: 10/03/2015
+Start Time: 11:30
+End Time: 13:30
+Succeed! The event has been created.
+Continue to [C]reate event OR back to [M]ain menu?
+c
+
+To create an event, please enter the following information:
+Title: hello2
+Date: 09/30/2015
+Start Time: 11:00
+End Time: 
+Succeed! The event has been created.
+Continue to [C]reate event OR back to [M]ain menu?
+c
+
+To create an event, please enter the following information:
+Title: CS 157 Exam
+Date: 10/29/2015
+Start Time: 12:00
+End Time: 13:15
+Succeed! The event has been created.
+Continue to [C]reate event OR back to [M]ain menu?
+c
+
+To create an event, please enter the following information:
+Title: hello4
+Date: 10/03/2015
+Start Time: 07:30
+End Time: 10:00
+Succeed! The event has been created.
+Continue to [C]reate event OR back to [M]ain menu?
+m
+
+********************************************************
+Welcome to the console Calendar, written by YanQiang Lu
+********************************************************
+     October 2015
+Su Mo Tu We Th Fr Sa
+             1  2  3 
+ 4  5  6  7  8  9 [10] 
+11 12 13 14 15 16 17 
+18 19 20 21 22 23 24 
+25 26 27 28 29 30 31 
+
+Note: The marked date is today.
+********************************************************
+Select one of the following options: 
+[L]oad   [V]iew by  [C]reate, [G]o to [E]vent list [D]elete  [Q]uit
+v
+[D]ay view or [M]view ?
+m
+
+
+Entered month view...
+
+     October 2015
+Su Mo Tu We Th Fr Sa
+             1  2 [3] 
+ 4  5  6  7  8  9 10 
+11 12 13 14 15 16 17 
+18 19 20 21 22 23 24 
+25 26 27 28 [29] 30 31 
+
+Note: The marked dates are the days with event.
+[P]revious or [N]ext or [M]ain menu ?
+p
+
+
+Entered month view...
+
+     September 2015
+Su Mo Tu We Th Fr Sa
+       1  2  3  4  5 
+ 6  7  8  9 10 11 12 
+13 14 15 16 17 18 19 
+20 21 22 23 24 25 26 
+27 28 29 [30] 
+Note: The marked dates are the days with event.
+[P]revious or [N]ext or [M]ain menu ?
+m
+
+********************************************************
+Welcome to the console Calendar, written by YanQiang Lu
+********************************************************
+     October 2015
+Su Mo Tu We Th Fr Sa
+             1  2  3 
+ 4  5  6  7  8  9 [10] 
+11 12 13 14 15 16 17 
+18 19 20 21 22 23 24 
+25 26 27 28 29 30 31 
+
+Note: The marked date is today.
+********************************************************
+Select one of the following options: 
+[L]oad   [V]iew by  [C]reate, [G]o to [E]vent list [D]elete  [Q]uit
+v
+[D]ay view or [M]view ?
+d
+
+Sat October 10 2015No event in this day.
+[P]revious or [N]ext or [M]ain menu ?
+n
+
+Sun October 11 2015No event in this day.
+[P]revious or [N]ext or [M]ain menu ?
+n
+
+Mon October 12 2015No event in this day.
+[P]revious or [N]ext or [M]ain menu ?
+m
+
+********************************************************
+Welcome to the console Calendar, written by YanQiang Lu
+********************************************************
+     October 2015
+Su Mo Tu We Th Fr Sa
+             1  2  3 
+ 4  5  6  7  8  9 [10] 
+11 12 13 14 15 16 17 
+18 19 20 21 22 23 24 
+25 26 27 28 29 30 31 
+
+Note: The marked date is today.
+********************************************************
+Select one of the following options: 
+[L]oad   [V]iew by  [C]reate, [G]o to [E]vent list [D]elete  [Q]uit
+e
+
+-------------------All Events---------------------------
+
+Event Title: hello2
+Event Date: Wed, September, 30, 2015
+Start time: 11:00
+End Time: No end time
+
+Event Title: hello4
+Event Date: Sat, October, 3, 2015
+Start time: 07:30
+End Time: 10:00
+
+Event Title: hello1
+Event Date: Sat, October, 3, 2015
+Start time: 11:30
+End Time: 13:30
+
+Event Title: CS 157 Exam
+Event Date: Thur, October, 29, 2015
+Start time: 12:00
+End Time: 13:15
+----------------------End-------------------------------
+Back to [M]ain menu?
+m
+
+********************************************************
+Welcome to the console Calendar, written by YanQiang Lu
+********************************************************
+     October 2015
+Su Mo Tu We Th Fr Sa
+             1  2  3 
+ 4  5  6  7  8  9 [10] 
+11 12 13 14 15 16 17 
+18 19 20 21 22 23 24 
+25 26 27 28 29 30 31 
+
+Note: The marked date is today.
+********************************************************
+Select one of the following options: 
+[L]oad   [V]iew by  [C]reate, [G]o to [E]vent list [D]elete  [Q]uit
+d
+
+[S]elected or [A]ll ?
+s
+Please type a date you want to delete from: 
+09/30/2015
+
+Deleted! Back to [M]ain menu?
+m
+
+********************************************************
+Welcome to the console Calendar, written by YanQiang Lu
+********************************************************
+     October 2015
+Su Mo Tu We Th Fr Sa
+             1  2  3 
+ 4  5  6  7  8  9 [10] 
+11 12 13 14 15 16 17 
+18 19 20 21 22 23 24 
+25 26 27 28 29 30 31 
+
+Note: The marked date is today.
+********************************************************
+Select one of the following options: 
+[L]oad   [V]iew by  [C]reate, [G]o to [E]vent list [D]elete  [Q]uit
+e
+
+-------------------All Events---------------------------
+
+Event Title: hello4
+Event Date: Sat, October, 3, 2015
+Start time: 07:30
+End Time: 10:00
+
+Event Title: hello1
+Event Date: Sat, October, 3, 2015
+Start time: 11:30
+End Time: 13:30
+
+Event Title: CS 157 Exam
+Event Date: Thur, October, 29, 2015
+Start time: 12:00
+End Time: 13:15
+----------------------End-------------------------------
+Back to [M]ain menu?
+m
+
+********************************************************
+Welcome to the console Calendar, written by YanQiang Lu
+********************************************************
+     October 2015
+Su Mo Tu We Th Fr Sa
+             1  2  3 
+ 4  5  6  7  8  9 [10] 
+11 12 13 14 15 16 17 
+18 19 20 21 22 23 24 
+25 26 27 28 29 30 31 
+
+Note: The marked date is today.
+********************************************************
+Select one of the following options: 
+[L]oad   [V]iew by  [C]reate, [G]o to [E]vent list [D]elete  [Q]uit
+q
+
+Serialization succeed!
+Save to text!
